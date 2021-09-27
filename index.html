@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Twitter Bootstrap Tutorial</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- طريقة الاستدعاء من النت مباشرة اي يجب عليك ان تكون متصل بالانترنت -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <!-- من اجل الحصول على الايقونات -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        i,
+        .glyphicon {
+            color: #337ab7;
+        }
+    </style>
+</head>
+
+<body style="padding-top: 20px;">
+    <!--كل الذي علينا استدعاء الكلاسات ولمعرفة استدعائها فهي تكون جاهزة في الموقع الرسمي لبوتستراب js or css البوتستراب عبارة عن كلاسات جاهزة وعناصر معدل عليها بال -->
+    <!--عن طريق الكلاسات الجاهزة html طبعا اخواني واخواتي البوتستراب يتعامل مع عناصر ال -->
+    <!-- navbar -->
+    <!--القيمة الافتراضية المعطاة بالبوتستراب والكلاس الاخير عمله ابقاء القائمة ملصتقة بالاعلى navbar والكلاس الثاني كي تاخذ ال  nav  اول كلاس رح يكون عبارة عن -->
+    <nav class="nav navbar-default navbar-fixed-top">
+
+        <div class="container">
+            <div class="navbar-header">
+                <!--واخر كلاس لاي العناصر سوف يقوم بعملية الاخفاء  data-toggle اما الخاصية الثانية هي ما هو عمل هذا العنصر  collapsed وافتراضيا يكون  navbar-toggle اول كلاس اخفاء وعرض وهو  -->
+                <!--الذي يحتوي على العناصر جميعا navbar=id العناصر التي ستكون داخل القائمة هي المحصورة ضمن العنصر الذي لديه ال -->
+                <!-- هذه الخاصية طبعا سوف تعمل ضمن الشاشات الصغيرة كالهواتف وغيرها اما الصفحات على الكمبيوتر العناصر سوف تكون طبيعية -->
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- عبارة عن عنوان للصفحة -->
+                <a href="#" class="navbar-brand">Technical Blog</a>
+            </div>
+            <!--قابلا ببعرض والاخفاء navbar لكي نجعل ال -->
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <!-- الكلاس الاول هذا عبارة عن تنشيط العنصر -->
+                    <!-- الكلاس الثاني عبارة عن ايقونة بيت -->
+                    <li class="active"><a href="#"><i class="bi bi-house-door-fill"></i> Home</a></li>
+                    <li><a href="#">Articels</a></li>
+                    <!-- قائمة خاصة بعرض الدروس حول لغات البرمجة -->
+                    <li class="dropdown">
+                        <!-- data-toggle==> القصد هنا ما العملية التي سيقوم بها عند الضغط على الرابط 
+                        لكي نضيف رمز بجانب الكلام للدلالة على انها قائمة وهذا الرمز عبارة عن رمز نزول span وضعنا 
+                        -->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Programming <span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-header"> Programming languages</li> <!-- عنوان العناصر ضمن القائمة -->
+                            <li><a href="#">Visual C#</a></li>
+                            <li><a href="#">Visual Basic.Net</a></li>
+                            <li><a href="#">Java</a></li>
+                            <li><a href="#">Python</a></li>
+
+                            <li class="dropdown-header"> Last Posts</li> <!-- عنوان العناصر ضمن القائمة -->
+                            <li><a href="#">Introduction To MVC6</a></li>
+                            <li><a href="#">What About Katana and Owin</a></li>
+                            <li><a href="#">Difference Between MVC and Web Forms</a></li>
+                            <li><a href="#">Download Visual Studio 2022</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+
+                <!-- سوف تظهر هذه القائمة على اليمين -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><i class="bi bi-person-plus-fill"></i> Sign Up</a></li>
+                    <li><a href="#"><i class="bi bi-box-arrow-in-right"></i> Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Nav -->
+    <!--  Start Jumbotron -->
+    <!--يقسم الصفحة الى 12 عامود لتصميم الصفحة بشكل متجاوب مع كل الاجهزة grid system سوف نعتمد هنا لانشاء هذا القسم على نظام ال -->
+    <!-- اولا هذا الكلاس موجود بالبوتستراب يجب علينا كتابته -->
+    <div class="jumbotron">
+        <!-- النظام الشبكي #################### Grid system #######################
+        يقسم النظام الشبكي في إطار العمل 
+        Bootstrap الصفحة إلى 12 عمودًا أفقيًّا تتناسب ومقاسات الشاشات المختلفة، ويحتوي النظام
+        الشبكي على عدة أحجام مختلفة (xs, sm, md, lg , xl , xxl ) 
+        مُخصّصة للأجهزة المحمولة والأجهزة اللوحية والمكتبية والشاشات الكبيرة.
+        تستطيع أن تضع العناصر المناسبة داخل كل عمود من هذه الأعمدة. بإمكانك استخدامها كاملة أو أن تستخدم أعمدة لها أحجام مجموعها
+        مساوٍ لـ 12 عمود والشكل التالي يمثل بعض أحجام الأعمدة المستخدمة في تقسيم أجزاء الصفحة.
+
+        الأصناف المتبعة في النظام الشبكي لـBootstrap
+        هناك عدة أصناف مختلفة تستطيع أن تستخدمها مع كل عمود من أعمدة النظام الشبكي ليُصبح مُتجاوبًا مع كل أحجام الشاشات كما يلي:
+    -->
+        <!-- وايضا يجب علينا كتابة كلاس الحاوي للكل  -->
+
+        <div class="container">
+            <!-- التقسيم رح يكون بشكل مسطر -->
+            <div class="row">
+                <!--فهي عبارة عن القياس لمجموع العواميد بشكل عام  md يوجد قياسات للاعمدة اي التقسيم اولا نوع التقسيم قدد حددناه انه يجب ان يكون بشكل عامودي اما  -->
+                <div class="col-md-8">
+                    <h1 style="color: #337ab7; font-size: 32pt;">Mobarmijoun Blog</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis placeat commodi fugiat,
+                        quisquam ipsum enim. Tenetur, quasi omnis? Et nihil delectus impedit facere error corrupti
+                        ducimus deleniti neque, autem accusamus.,Lorem ipsum dolor sit amet consectetur adipisicing
+                        elit. Debitis, est, accusantium quae voluptatum maiores aspernatur esse sunt laboriosam eveniet
+                        ratione quam vel error perspiciatis corporis aliquid quis et enim consequuntur!</p>
+                    <a href="#" class="btn btn-info">Continue</a>
+                </div>
+                <!-- هذا القسم الثاني من الحاوي سوف ياخذ اربع اعمدة من النظام الشبكي -->
+                <div class="col-md-4">
+                    <!-- اولا لدي صورة اما داخل الكلاسات اول كلاس هو لجعل الصورة تظهر بشكل متجاوب اما الثاني عبارة عن اطار للصورة -->
+                    <img src="./images/jumbo_pic.jpg" alt="" class="img-responsive thumbnail" style="margin-top: 30px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Jumbotron -->
+    <!-- Start article -->
+    <!-- هنا انشانا قسم معين يعرض فيه رابط عند الضغط عليه ياخذك الى صفحة الرواية  -->
+    <div class="container">
+        <div class="row">
+            <!-- posts -->
+            <div class="col-md-8">
+                <!-- اسم القسم -->
+                <h1 class="page-header">OUR ARTICLES</h1>
+                <!-- First Article -->
+                <h2><a href="#">Introduction To Design patterns</a></h2>
+                <p>
+                    <!-- اولا كتبنا بواسطة من كتب وبعدها وضعنا ايقونة للاستدلال لا اكثر
+                    من بعدها وضعنا الرابط الذي اذا ذغطنا عليه سوف ياخذنا الى الصفحة التي فيها الرواية -->
+                    Written by <span class="glyphicon glyphicon-user"></span> <a href="#">Abdullah Ghazal</a> at: <span
+                        class="glyphicon glyphicon-time"></span>
+                    27/09/2021 - 1:26
+                </p>
+                <hr>
+                <img src="./images/1.jpg" class="img-responsive thumbnail" alt="">
+                <hr>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ad doloribus ab nemo recusandae nisi
+                    aliquam ratione tenetur harum excepturi. Ad sunt excepturi fuga, rem soluta consequuntur obcaecati
+                    iure officiis.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis culpa
+                    dolores deserunt. Quam delectus accusamus recusandae fugit modi! Enim sapiente placeat blanditiis
+                    aspernatur, eveniet omnis fugiat esse voluptas itaque et?</p>
+                <!-- زر لقراءة المزيد بصفحة منفصلة -->
+                <a href="#" class="btn btn-primary">Red More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <!-- Second Article -->
+                <h2><a href="#">Design patterns in depth</a></h2>
+                <p>
+                    <!-- اولا كتبنا بواسطة من كتب وبعدها وضعنا ايقونة للاستدلال لا اكثر
+                    من بعدها وضعنا الرابط الذي اذا ذغطنا عليه سوف ياخذنا الى الصفحة التي فيها الرواية -->
+                    Written by <span class="glyphicon glyphicon-user"></span> <a href="#">Abdullah Ghazal</a> at: <span
+                        class="glyphicon glyphicon-time"></span>
+                    27/09/2021 - 1:26
+                </p>
+                <hr>
+                <!-- عبارة عن صورة للتعريف بالمنتج -->
+                <img src="./images/2.jpg" class="img-responsive thumbnail" alt="">
+                <hr>
+                <!-- نص اعتباطي ليس له اي معنى -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ad doloribus ab nemo recusandae nisi
+                    aliquam ratione tenetur harum excepturi. Ad sunt excepturi fuga, rem soluta consequuntur obcaecati
+                    iure officiis.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis culpa
+                    dolores deserunt. Quam delectus accusamus recusandae fugit modi! Enim sapiente placeat blanditiis
+                    aspernatur, eveniet omnis fugiat esse voluptas itaque et?</p>
+                <!-- زر لقراءة المزيد بصفحة منفصلة -->
+                <a href="#" class="btn btn-primary">Red More <span class="glyphicon glyphicon-chevron-right"></span></a>
+
+                <!-- Third Article -->
+                <h2><a href="#"> Design patterns with C#</a></h2>
+                <p>
+                    <!-- اولا كتبنا بواسطة من كتب وبعدها وضعنا ايقونة للاستدلال لا اكثر
+                    من بعدها وضعنا الرابط الذي اذا ذغطنا عليه سوف ياخذنا الى الصفحة التي فيها الرواية -->
+                    Written by <span class="glyphicon glyphicon-user"></span> <a href="#">Abdullah Ghazal</a> at: <span
+                        class="glyphicon glyphicon-time"></span>
+                    27/09/2021 - 1:26
+                </p>
+                <hr>
+                <!-- عبارة عن صورة للتعريف بالمنتج -->
+                <img src="./images/3.jpg" class="img-responsive thumbnail" alt="">
+                <hr>
+                <!-- نص اعتباطي ليس له اي معنى -->
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut ad doloribus ab nemo recusandae nisi
+                    aliquam ratione tenetur harum excepturi. Ad sunt excepturi fuga, rem soluta consequuntur obcaecati
+                    iure officiis.lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis culpa
+                    dolores deserunt. Quam delectus accusamus recusandae fugit modi! Enim sapiente placeat blanditiis
+                    aspernatur, eveniet omnis fugiat esse voluptas itaque et?</p>
+                <!-- زر لقراءة المزيد بصفحة منفصلة -->
+                <a href="#" class="btn btn-primary">Red More <span class="glyphicon glyphicon-chevron-right"></span></a>
+                <hr>
+                <!-- فكرة الروابط هاي عبارة عن عن صفحات قديمة وجديدة بتحسن تتنقل بينهن للشي القديم والشي جديد -->
+                <ul class="pager" style="position: relative;">
+                    <li class="pervious" style="position: absolute; left: 0;"><a href="#">&larr; Older</a></li>
+                    <li class="next"><a href="#">Newer &rarr;</a></li>
+                </ul>
+            </div>
+            <!-- sidebar -->
+            <div class="col-md-4">
+                <!-- search -->
+                <!--واضح  border من اجل اعطاء الديف خلفية و -->
+                <div class="well">
+                    <!-- عبارة عن عنوان لخانة البحث  -->
+                    <h4>Search Here</h4>
+                    <!-- كلاس جاهز يحتوي على مربع نصي وزر وكلا الخيارين يجب توفرهما لانشاء خانة بحث -->
+                    <div class="input-group">
+                        <!-- هذا الكلاس موجود بالبوتستراب يعرض الحقل النصي بشكل منسق وجميل -->
+                        <input type="text" class="form-control">
+                        <!-- هذه السبان لوضع الزر وشارة البحث مع بعض ودمجها -->
+                        <span class="input-group-btn">
+                            <button class="btn btn-primary" type="button">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                    </div>
+                </div>
+                <!-- Categories -->
+                <!--فيكون مجموع القائمتين عبارة عن 12 عامود من النوع المتوسط اي المخصص للشاشات المتوسطة row لكي نوزع الجدول لقسمين كل قسم ياخذ 6 اعمدة من النظام الشبكي ضمن ال row اولا جمعنا الكل بديف حاوية لهم ضمن هذه الديف وضعنا كلاس من نوع  -->
+                <!-- وايضا وضعت من نفسي 6 اعمدة للشاشات الصغيرة والصغيرة جدا لكي يبقى الصتميم مقسم لقسمين لا اريد منه ان تتوزع العناصر تحت بعضها في الشاشات الصغيرة -->
+                <div class="well">
+                    <h4>Categories</h4>
+                    <div class="row">
+                        <div class="col-md-6 col-xs-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Visual Basic.Net</a></li>
+                                <li><a href="#">Visual C#</a></li>
+                                <li><a href="#">C++</a></li>
+                                <li><a href="#">Delphi</a></li>
+                                <li><a href="#">Java</a></li>
+                                <li><a href="#">PHP</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6 col-xs-6">
+                            <ul class="list-unstyled">
+                                <li><a href="#">Python</a></li>
+                                <li><a href="#">Ruby C#</a></li>
+                                <li><a href="#">Perl</a></li>
+                                <li><a href="#">Cobol</a></li>
+                                <li><a href="#">Pascal</a></li>
+                                <li><a href="#">Swift</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Popular Posts  -->
+                <div class="well">
+                    <h4>Popular Posts</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Learning PHP in One Month</a></li>
+                        <li><a href="#">ASP.NET From Classic Asp To Web API</a></li>
+                        <li><a href="#">Difference Between Vbscript and Javascript</a></li>
+                        <li><a href="#">Learning PHP in One Month</a></li>
+                        <li><a href="#">Learning PHP in One Month</a></li>
+                        <li><a href="#">Learning PHP in One Month</a></li>
+                        <li><a href="#">Learning PHP in One Month</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <footer class="blockquote-footer" style=" text-align: center; background-color: #337ab7;">
+            <div class="row">
+                <div class="col-md-12">
+                    <p style="margin-top: 10px; color: white;">Copyright &copy;<span
+                            style="color: mediumspringgreen;">Mobarmijoun.com</span> - 2016</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
